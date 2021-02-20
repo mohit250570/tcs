@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+ 
+    <style>
+      body {
+        background-image: url("images/bg1.jpg");
+        
+        
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+          }     
+
+         
+.user{
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  
+
+}
+     
+form {
+  border: 3px solid #f1f1f1;
+}
+
+/* Full-width inputs */
+input[type=text],input[type=email],input[type=address],input[type=tel], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 2px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 6px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+  width: 20%;
+  border-radius: 80%;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 10px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding-top: 10px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}
+
+.text{
+  font-size: 15px;
+  color: white;
+}
+
+</style>
+    <title>User registration</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">ONLINE BOOKING</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Services
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Booking</a></li>
+            <li><a class="dropdown-item" href="#">Status</a></li>
+            <li><hr class="dropdown-divider"></li>
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+<br/>
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+    </div>
+    
+    <div class="col-6">
+      
+     <form action="confirm.html" method="post" style="background-color: #404040; opacity: 0.9">
+  <div class="imgcontainer">
+
+    <img src="images/user.jpg" alt="Avatar" class="avatar">
+  </div><center>
+  <label><span class="user"><b>UserID:</b></span>
+  <span class="user" id="userid"><b></b></span></label></center>
+  <div class="container">
+    <label for="uname"><span class="text"><b>UserName</b></span></label>
+    <input type="text" placeholder="Enter Username" name="uname"  required maxlength="15">
+     <label for="email"><span class="text"><b>Email</b></span></label>
+    <input type="email" placeholder="Enter Email" name="email" required>
+     <label for="address"><span class="text"><b>Address</b></span></label>
+    <input type="address" placeholder="Enter Address" name="address" required>
+     <label for="contact"><span class="text"><b>Contact</b></span></label>
+    <input type="tel" id="phone" name="phone" placeholder="Enter Contact Number" name="contact"  required>
+
+    <label for="psw"><span class="text"><b>Password</b></span></label>
+    <input type="password" placeholder="Enter Password" name="psw" id="password" required>
+      <label for="psw"><span class="text"><b>ConfirmPassword</b></span></label>
+    <input type="password" placeholder="Confirm Password" name="psw" id="confirm_password" required>
+    </label>
+    <button type="submit" >Register</button>
+    <button onclick="location.href = 'index.html';" type="submit">Login</button>
+  </div>
+  <div class="container">
+    
+    
+  </div>
+</form>
+
+    </div>
+
+    <div class="col-3">
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById("userid").innerHTML = Math.floor(Math.random()*1000000);
+</script>
+<script>
+var password = document.getElementById("password")
+  , confirm_password = document.getElementById("confirm_password");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+</script>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
